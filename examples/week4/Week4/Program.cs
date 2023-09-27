@@ -28,8 +28,48 @@
 
         // }
 
-        Breakout b = new Breakout();
+        // Breakout b = new Breakout();
+        // b.Run();
 
-        b.Run();
+        int x = 100;
+        x = InClass.Foo(x);
+        Console.WriteLine(x);
+
+        Foo f = new Foo();
+        f.X = 100;
+        InClass.Bar(f);
+        Console.WriteLine(f.X);
+
+        Dice d6 = new Dice(6);
+        Roll(d6);
+
+        Dice d20 = new Dice(20);
+        Roll(d20);
+
+        int[] arry = new int[] { 1, 2, 3, 4 };
+
+        for(int i = 0; i < 10; i++)
+        {
+            try
+            {
+                Console.WriteLine(arry[i]);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"Index {i} Is Out of Bounds, exception {ex.Message}");
+                throw;
+            }
+        }
+
+    }
+
+
+
+    private static void Roll(Dice d)
+    {
+        for(int i = 0; i < 100; i++)
+        {
+            Console.WriteLine(d.Roll());
+        }
     }
 }
