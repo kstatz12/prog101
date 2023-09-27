@@ -30,6 +30,6 @@
 
         Breakout b = new Breakout();
 
-        b.Run2();
+        b.Run();
     }
 }
